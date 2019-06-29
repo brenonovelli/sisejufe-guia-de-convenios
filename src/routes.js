@@ -7,16 +7,9 @@ import Filter from './components/Filter';
 const Routes = () => (
 	<BrowserRouter>
 		<Switch>
-			<Route path="/rap/sisejufe/guia-de-convenios/" exact component={Filter} />
-			<Route
-				path="/rap/sisejufe/guia-de-convenios/:local"
-				exact
-				component={Filter}
-			/>
-			<Route
-				path="/rap/sisejufe/guia-de-convenios/:local/:segmento"
-				component={Filter}
-			/>
+			<Route path="/" exact component={Filter} />
+			<Route path="/:local" exact component={Filter} />
+			<Route path="/:local/:segmento" component={Filter} />
 		</Switch>
 	</BrowserRouter>
 );

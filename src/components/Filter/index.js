@@ -39,7 +39,8 @@ export default function Filter({ match }) {
 	if (convenio_locais.loading) {
 		return <div>Carregando locais...</div>;
 	}
-
+	
+	// Criando a lista de locais
 	const rootLocals = convenio_locais.items
 		.filter(local => local.parent === 0)
 		.map(localRoot => ({
