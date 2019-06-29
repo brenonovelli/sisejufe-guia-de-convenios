@@ -20,6 +20,9 @@ export default function Locals({ locals }) {
 		sethandleLocals(newHandleLocals);
 	}
 
+	// const envLocalWP = '/rap/sisejufe/guia-de-convenios/';
+	const envLocalWP = '/';
+
 	return (
 		<ul className="lista_de_locais">
 			{handleLocals.map(local => (
@@ -30,7 +33,7 @@ export default function Locals({ locals }) {
 				>
 					<Link
 						onClick={() => toogleVisibility(local.id)}
-						to={'/rap/sisejufe/guia-de-convenios/' + local.slug}
+						to={envLocalWP + local.slug}
 					>
 						<i className="icone fas fa-caret-right" />
 						{local.name}

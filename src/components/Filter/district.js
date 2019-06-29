@@ -21,6 +21,9 @@ export default function District({ locals }) {
 		sethandleLocals(newHandleLocals);
 	}
 
+	// const envLocalWP = '/rap/sisejufe/guia-de-convenios/';
+	const envLocalWP = '/';
+
 	return handleLocals.length > 0 ? (
 		<ul className="lista_de_bairros child">
 			{handleLocals.map(local => (
@@ -31,7 +34,7 @@ export default function District({ locals }) {
 				>
 					<Link
 						onClick={() => toogleVisibility(local.id)}
-						to={'/rap/sisejufe/guia-de-convenios/' + local.slug}
+						to={envLocalWP + local.slug}
 					>
 						<i className="icone fas fa-caret-right" />
 						{local.name}

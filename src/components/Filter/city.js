@@ -34,6 +34,9 @@ export default function City({ locals }) {
 		sethandleLocals(newHandleLocals);
 	}
 
+	// const envLocalWP = '/rap/sisejufe/guia-de-convenios/';
+	const envLocalWP = '/';
+
 	return handleLocals.length > 0 ? (
 		<ul className="lista_de_cidades child">
 			{/* {console.log(handleLocals)} */}
@@ -45,7 +48,7 @@ export default function City({ locals }) {
 						className={local.active ? 'active' : 'closed'}
 					>
 						<Link
-							to={'/rap/sisejufe/guia-de-convenios/' + local.slug}
+							to={envLocalWP + local.slug}
 							onClick={() => toogleVisibility(local.id)}
 						>
 							<i className="icone fas fa-caret-right" />

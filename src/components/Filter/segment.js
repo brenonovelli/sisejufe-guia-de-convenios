@@ -32,19 +32,15 @@ export default function Segment({ idParent }) {
 		.filter(item => item.id === idParent)
 		.map(itemInner => itemInner.slug);
 
+	// const envLocalWP = '/rap/sisejufe/guia-de-convenios/';
+	const envLocalWP = '/';
+
 	return filtered_parent_obj_to_segment.length > 0 ? (
 		<ul className="lista_de_segmentos child">
 			{filtered_parent_obj_to_segment.map(segmento =>
 				segmento.map(segmentoInner => (
 					<li key={segmentoInner.id} className="segment">
-						<Link
-							to={
-								'/rap/sisejufe/guia-de-convenios/' +
-								local_slug +
-								'/' +
-								segmentoInner.slug
-							}
-						>
+						<Link to={envLocalWP + local_slug + '/' + segmentoInner.slug}>
 							{segmentoInner.name}
 						</Link>
 					</li>
