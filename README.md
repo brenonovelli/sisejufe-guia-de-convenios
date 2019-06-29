@@ -1,3 +1,7 @@
+Primeiro projeto em React para colocar o estudo em prática.
+O projeto monta um guia fazendo requisições API Rest em um Wordpress.
+React hooks, redux com hooks, routes, react router dom.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
