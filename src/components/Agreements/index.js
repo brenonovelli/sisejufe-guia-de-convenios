@@ -3,10 +3,10 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { fetchAgreements } from '../../store/actions/agreements';
-// import { slugToId } from './actions';
 
 import FilterArguments from './header';
 import ItemAgreement from './item';
+import ContentAgreement from './content';
 
 export default function Agreements() {
 	const [activesItem, setactiveItem] = useState([]);
@@ -61,13 +61,16 @@ export default function Agreements() {
 	useEffect(() => {
 		const agreementsFiltered = agreements.filter(agreement => {
 			if (activeSegmentsID !== 0 && activeLocalsID !== 0) {
+				console.log('1');
 				return (
 					agreement.convenio_locais.indexOf(activeLocalsID) > -1 &&
 					agreement.convenio_segmento.indexOf(activeSegmentsID) > -1
 				);
 			} else if (activeSegmentsID === 0 && activeLocalsID !== 0) {
+				console.log('2');
 				return agreement.convenio_locais.indexOf(activeLocalsID) > -1;
 			} else {
+				console.log('3');
 				return agreement.status === 'publish';
 			}
 		});
@@ -118,15 +121,20 @@ export default function Agreements() {
 						key={agreement.id}
 						onClick={() => handleFavorite(agreement.id)}
 						className={
-							'AgreementItem ' +
-							(agreement.favorite
-								? 'col-12 my-5 active order-first'
-								: 'col-3 my-5')
+							'AgreementItem col-3 my-5' + (agreement.favorite ? ' active' : '')
 						}
 					>
 						<ItemAgreement agreement={agreement} />
 					</div>
 				))}
+			</div>
+			{/* Conteúdo */}
+			<div className="row AgreementActiveContent">
+				{activesItem
+					.filter(agreement => agreement.favorite === true)
+					.map(agreement => (
+						<ContentAgreement key={agreement.id} agreement={agreement} />
+					))}
 			</div>
 		</div>
 	);

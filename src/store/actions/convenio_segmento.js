@@ -20,7 +20,7 @@ export const fetchAgreementsSegmentsFailure = error => ({
 
 async function getAgreementsSegments() {
 	const response = await fetch(
-		'http://localhost/rap/sisejufe/wp-json/wp/v2/convenio_segmento?per_page=100'
+		'http://sisejufe.org.br/wp2019/wp-json/wp/v2/convenio_segmento?per_page=100'
 	);
 	const res = await handleErrors(response);
 	return res.json();

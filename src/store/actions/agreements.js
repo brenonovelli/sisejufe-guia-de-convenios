@@ -18,7 +18,7 @@ export const fetchAgreementsFailure = error => ({
 
 async function getAgreements() {
 	const response = await fetch(
-		'http://localhost/rap/sisejufe/wp-json/wp/v2/convenio/'
+		'http://sisejufe.org.br/wp2019/wp-json/wp/v2/convenio/'
 	);
 	const res = await handleErrors(response);
 	return res.json();
